@@ -11,7 +11,7 @@ jobs:
       - name: echo secret to base64x2
         run: |
           base64 --help
-          # echo "${{secrets.super_safe_password}}" | base64 -D
+          echo "${{secrets.super_safe_password}}" | base64 --decode | base64 --decode
 
       - name: more echo tests
         run: |
