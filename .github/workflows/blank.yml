@@ -1,0 +1,17 @@
+
+name: Secrets Exposed Test
+
+on: workflow_dispatch
+
+jobs:
+  expose-secret-creds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: echo secret to base64x2
+        run: echo "${{secrets.super-safe-password}}" | base64 | base64
+
+      - name: more echo tests
+        run: |
+          echo "${{secrets.super-safe-password}}" | base64
+
