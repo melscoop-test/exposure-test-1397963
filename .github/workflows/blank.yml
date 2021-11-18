@@ -5,7 +5,7 @@ on: workflow_dispatch
 
 jobs:
   expose-secret-creds:
-    runs-on: macos-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: echo secret to base64x2
