@@ -9,7 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: echo secret to base64x2
-        run: echo "${{secrets.super_safe_password}}" | base64 -D
+        run: |
+          base64 -h
+          # echo "${{secrets.super_safe_password}}" | base64 -D
 
       - name: more echo tests
         run: |
