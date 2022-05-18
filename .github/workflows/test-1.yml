@@ -1,0 +1,12 @@
+name: Test action update 1
+
+on: workflow_dispatch
+
+jobs:
+  test-job-1:
+    runs-on: default
+    steps:
+      - uses: actions/checkout@v2
+      - name: test date
+        run: |
+          echo $date
